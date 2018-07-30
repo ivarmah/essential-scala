@@ -7,10 +7,6 @@ val blockValue = {
   3
 }
 
-println("Block value:", blockValue);
-
-// return type is ANY
-println(if(1 > 2) "alien" else 2018)
-
-// return type is Unit ()
+assert(blockValue == 3)
+assert((if(1 > 2) "alien" else 2018) == 2018)
 println(if(1 > 2) "alien")

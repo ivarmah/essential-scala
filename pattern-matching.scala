@@ -25,11 +25,11 @@
 }
 
 {
-  case class Cat(colour:String, food:String)
+  case class Cat(colour: String, food: String)
 
-  object ChipShop{
+  object ChipShop {
     def willServe(cat: Cat): Boolean = {
-      cat match{
+      cat match {
         case Cat(_, "chips") => true
         case Cat(_, _) => false
       }
@@ -43,18 +43,17 @@
   assert(ChipShop.willServe(helloKitty) == true)
 }
 
-
 {
 
-  case class Director(firstName: String, lastName: String, yearOfBirth: Int){
-    def name:String = s"$firstName $lastName"
+  case class Director(firstName: String, lastName: String, yearOfBirth: Int) {
+    def name: String = s"$firstName $lastName"
   }
 
-  case class Film(name:String, yearOfRelease:Int, imdbRating:Double, director:Director)
+  case class Film(name: String, yearOfRelease: Int, imdbRating: Double, director: Director)
 
-  object Dad{
+  object Dad {
     def rate(film: Film): Double = {
-      film match{
+      film match {
         case Film(_, _, _, Director("Clint", "Eastwood", _)) => 10.0
         case Film(_, _, _, Director("John", "McTiernan", _)) => 7.0
         case _ => 3.0

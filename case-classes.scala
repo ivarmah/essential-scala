@@ -90,23 +90,22 @@ assert(barry.copy() == barry.copy())
 }
 
 
-{
-  case class Person(firstName: String, lastName: String){
-    def name = firstName + " " + lastName
-  }
 
-  object Person {
-    def apply(fullName: String): Person = {
-      val parts = fullName.split(" ")
-      new Person(parts(0), parts(1))
-    }
-
-    // def apply(firstName:String, lastName:String):Person
-  }
-
-  val person =  Person("Bill Johnson")
-  assert(person.lastName == "Johnson")
-
-  val nextPerson =  Person("Bill", "Johnson")
-  nextPerson(nextPerson.lastName == "Johnson")
+case class Person(firstName: String, lastName: String){
+  def name = firstName + " " + lastName
 }
+
+object Person {
+  def apply(fullName: String): Person = {
+    val parts = fullName.split(" ")
+    new Person(parts(0), parts(1))
+  }
+
+  // def apply(firstName:String, lastName:String):Person
+}
+
+val person =  Person("Bill Johnson")
+assert(person.lastName == "Johnson")
+
+val nextPerson =  Person("Bill", "Johnson")
+assert(nextPerson.lastName == "Johnson")

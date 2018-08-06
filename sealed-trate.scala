@@ -100,5 +100,28 @@ import java.util.Date
   assert(Draw(darkRectangle) == "A dark rectangle of 10.0 cm and 20.0 cm")
 }
 
+{
+
+  sealed trait DivisionResult
+  final case class Finite(result: Int) extends DivisionResult
+  final case object Infinite extends DivisionResult
+
+  case object divide{
+    def apply(first: Int, second: Int): DivisionResult = {
+      if(second == 0) Infinite else Finite(first/second)
+    }
+  }
+
+  assert((divide(1, 0) match {
+    case Finite(value) => s"It's finite: ${value}"
+    case Infinite      => s"It's infinite"
+  }) == "It's infinite")
+
+  assert((divide(4, 2) match {
+    case Finite(value) => s"It's finite: ${value}"
+    case Infinite      => s"It's infinite"
+  }) == "It's finite: 2")
+}
+
 
 

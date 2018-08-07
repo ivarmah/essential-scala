@@ -9,3 +9,4 @@ What I learned @scala:
  3. How to use pattern matching in different cases.
  4. How to use various patterns: product type, sum type patterns.
  5. How to use best of OOP: polymorphism, inheritance.
+ 6. ... to be continued ...

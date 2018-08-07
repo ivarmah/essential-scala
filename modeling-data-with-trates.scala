@@ -128,3 +128,69 @@ import java.util.Date
   assert(square.area == 100)
 }
 
+
+{
+  // Product Type Pattern "has-a and"
+  case class C()
+  case class B()
+  case class A(b: B, c: C)
+}
+
+{
+  // Sum Type Pattern "is-a or"
+  sealed trait A
+  final case class B() extends A
+  final case class C() extends A
+}
+
+{
+  //"is-a and"
+  trait B
+  trait C
+  trait A extends B with C
+}
+
+{
+  // "has-a or"
+  trait A {
+    def d: D
+  }
+  sealed trait D
+  final case class B() extends D
+  final case class C() extends D
+}
+
+{
+  // "has-a or"
+
+  sealed trait A
+  final case class B()
+  final case class C()
+  final case class D(b: B) extends A
+  final case class E(c: C) extends A
+}
+
+{
+  // A traffic light is red, red or yellow
+  sealed trait TrafficLight
+  final case class Red() extends TrafficLight
+  final case class Green() extends TrafficLight
+  final case class Yellow() extends TrafficLight
+
+}
+
+{
+  //A calculation may succeed( with an Int result) or fail( with a String message)
+  sealed trait Calculation
+  final case class Success(result: Int) extends Calculation
+  final case class Failure(reason: String) extends Calculation
+}
+
+{ // Bottled water has a size (a Int), a source (which is a well, spring, or tap), and A Boolean carbonated
+  sealed trait Source
+  final case object Well extends Source
+  final case object Spring extends Source
+  final case object Tap extends Source
+
+  case class BottledWater(size: Int, source: Source, carbonated: Boolean)
+}

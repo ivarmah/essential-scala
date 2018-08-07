@@ -8,5 +8,5 @@ What I learned @scala:
  2. Modeling data with (companion) objects, (case) classes, (sealed) traits.
  3. How to use pattern matching in different cases.
  4. How to use various patterns: product type, sum type patterns.
- 5. How to use best of OOP: polymorphism, inheritance.
+ 5. How to use best of OOP: polymorphism, inheritance and encapsulation.
  6. ... to be continued ...

@@ -13,8 +13,7 @@ sealed trait IntList{
 }
 
 final case object End extends IntList
-final case class Pair(head: Int, tail: IntList) extends IntList{
-}
+final case class Pair(head: Int, tail: IntList) extends IntList
 
 val example = Pair(1, Pair(2, Pair(3, End)))
 

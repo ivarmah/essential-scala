@@ -9,4 +9,5 @@ What I learned @scala:
  3. How to use pattern matching in different cases.
  4. How to use various patterns: product type, sum type patterns.
  5. How to use best of OOP: polymorphism, inheritance and encapsulation.
- 6. ... to be continued ...
+ 6. How to use recursive data.
+ 7. How to make the code more abstract with generics and functions.

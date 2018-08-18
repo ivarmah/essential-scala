@@ -11,3 +11,5 @@ What I learned @scala:
  5. How to use best of OOP: polymorphism, inheritance and encapsulation.
  6. How to use recursive data.
  7. How to make the code more abstract with generics and functions.
+ 8. ... to be continued ...
+
